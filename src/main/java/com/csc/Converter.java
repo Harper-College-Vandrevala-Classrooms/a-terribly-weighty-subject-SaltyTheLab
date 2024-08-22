@@ -1,24 +1,26 @@
 package com.csc;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Converter {
-  Scanner user = new Scanner(System.in);
-  Converter converter = new Converter();
+  //for user input if we ever comeback to this assignment
+  //-----------------------------------------------------
+  //Scanner user = new Scanner(System.in);
+  //Converter converter = new Converter();
 
-  public void prompt() {
-    // prompt is universal so this is the entry point to the converters
-    System.out.print("enter how many ounces you have: ");
-    int ounces = user.nextInt();
-    // bringing in converters
-    converter.toPounds(ounces);
-    converter.toPoundsAndOunces(ounces);
-  }
-
+  // public void prompt() {
+  // prompt is universal so this is the entry point to the converters
+  // System.out.print("enter how many ounces you have: ");
+  // int ounces = user.nextInt();
+  // bringing in converters
+  // converter.toPounds(ounces);
+  // converter.toPoundsAndOunces(ounces);
+  // }
+  //-------------------------------------------------------
   public String toPounds(int ounces) {
     String lbs = "lbs";
     double constant = 16;
-    Double output = ounces / constant;
+    double output = ounces / constant;
     if (output == 1) {
       lbs = "lb";
     }
@@ -36,13 +38,10 @@ public class Converter {
     }
     // check for one or zero pounds
     if (lb == 1) {
-      Abbr = " lb ";
+      Abbr = "lb";
     } else {
-      Abbr = " lbs ";
+      Abbr = "lbs";
     }
-    // adding integer wrapper for string conversion
-    Integer Oz = ounces;
-    Integer LB = lb;
-    return (LB.toString() + Abbr + Oz.toString() + " oz");
+    return (String.format("%d %s %d oz", lb, Abbr, ounces));
   }
 }
